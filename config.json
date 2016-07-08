@@ -1,0 +1,41 @@
+{
+    "connections": [
+        {
+            "port": "3000"
+        }
+    ],
+    "registrations": [
+        {
+            "plugin": {
+                "register": "good",
+                "options": {
+                    "reporters": {
+                        "console": [
+                            {
+                                "module": "good-console"
+                            },
+                            "stdout"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "plugin": {
+                "register": "./lib/db",
+                "options": {
+                    "host": "$env.DB_HOST",
+                    "database": "$env.DB_NAME",
+                    "user": "$env.DB_USER",
+                    "password": "$env.DB_PASS",
+                    "max": "$env.DB_MAX",
+                    "port": "5432",
+                    "idleTimeoutMillis": "10000"
+                }
+            }
+        },
+        {
+            "plugin": "./lib/web"
+        }
+    ]
+}
