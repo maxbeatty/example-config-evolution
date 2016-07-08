@@ -1,0 +1,5 @@
+test/
+.eslintrc
+.nvmrc
+.travis.yml
+config.json

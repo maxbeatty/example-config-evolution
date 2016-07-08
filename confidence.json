@@ -7,6 +7,20 @@
   "registrations": [
     {
       "plugin": {
+        "register": "good",
+        "options": {
+          "reporters": {
+            "console": [
+              {
+                "module": "good-console"
+              },
+              "stdout"
+            ]
+          }
+        }
+      }
+    }, {
+      "plugin": {
         "register": "./lib/db",
         "options": {
           "$filter": "now",
