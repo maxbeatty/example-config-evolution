@@ -15,7 +15,7 @@ Now you want a persistent store such as a database so you add [PostgreSQL](https
 
 ### [v3](https://github.com/maxbeatty/example-config-evolution/tree/v3)
 
-You deployed v2 and [it can't connect to PostgreSQL](https://example-config-evolution-aedeeoawbj.now.sh/) 😢
+You [deployed v2](https://example-config-evolution-aedeeoawbj.now.sh/) and it can't connect to PostgreSQL 😢
 
 You realize you'll need separate configurations for local development and when the app is deployed so you create a [JSON-based configuration](https://github.com/hapijs/confidence) with details for both environments.
 
@@ -33,6 +33,14 @@ To get [v3 deployed](https://example-config-evolution-cjlymgzktd.now.sh/), you n
 With [v3 deployed](https://example-config-evolution-cjlymgzktd.now.sh/), you realize sensitive information such as database passwords are committed to source control!<sup>[1](#fn-v4-1)</sup> You read about [how storing configuration in the environment is good](http://12factor.net/config) so you reconfigure your configuration to read from the environment for sensitive variables.
 
 <a name="fn-v4-1">1</a>: Those credentials are to a free tier of [ElephantSQL](http://www.elephantsql.com/) so these examples work. Please be nice to them and don't abuse that 20 MB database.
+
+### [v5](https://github.com/maxbeatty/example-config-evolution/tree/v4)
+
+Now that [v4 is deployed](https://example-config-evolution-ifxvwxvdfy.now.sh), you have the foundation for a web app that can grow to use more external services (e.g. logging, metrics, monitoring, caching, error reporting, payment processors) while keeping sensitive information like API keys and passwords out of your code. But your sensitive data is still [sitting in a plain text file on a server](https://example-config-evolution-ifxvwxvdfy.now.sh/_src/?f=.env&h=164%3B41).
+
+- If you want to change any of the values, you need to restart (assuming you have access to the server which is not the case with `now` or other "serverless" solutions such as [AWS Lambda](https://aws.amazon.com/lambda/)) or re-deploy your app.
+- If you want to continuously deploy from a Continuous Integration server or service, you have to keep all of your production configuration there which breeds its own access management challenges.
+
 
 ## Deployment
 

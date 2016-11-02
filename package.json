@@ -4,7 +4,7 @@
   "description": "Example of a web app configuration evolving",
   "main": "index.js",
   "scripts": {
-    "start": "rejoice -c config.json -r dotenv/config -p `pwd`",
+    "start": "rejoice -c config.json -p `pwd`",
     "test": "lab -c -L"
   },
   "repository": {
@@ -31,7 +31,6 @@
     "lab": "10.8.2"
   },
   "dependencies": {
-    "dotenv": "2.0.0",
     "good": "7.0.1",
     "good-console": "6.1.2",
     "hapi": "13.5.0",

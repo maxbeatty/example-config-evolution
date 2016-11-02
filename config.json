@@ -24,12 +24,12 @@
             "plugin": {
                 "register": "./lib/db",
                 "options": {
-                    "host": "$env.DB_HOST",
-                    "database": "$env.DB_NAME",
-                    "user": "$env.DB_USER",
-                    "password": "$env.DB_PASS",
-                    "max": "$env.DB_MAX",
-                    "port": "5432",
+                    "host": "db",
+                    "database": "postgres",
+                    "user": "postgres",
+                    "password": "",
+                    "max": "5",
+                    "port": "$env.POSTGRES_PORT_5432_TCP_PORT",
                     "idleTimeoutMillis": "10000"
                 }
             }
